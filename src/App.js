@@ -475,7 +475,7 @@ function App() {
                       </div>
                       <div>
                         <h3 className="text-lg font-semibold text-cool-gray-11 mb-1">Mehmet ODABAŞI</h3>
-                        <p className="text-cool-gray-11/70">Kurucu & Elektrik Mühendisi</p>
+                        <p className="text-cool-gray-11/70">Kurucu</p>
                       </div>
                     </div>
 
