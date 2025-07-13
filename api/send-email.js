@@ -1,7 +1,7 @@
-const nodemailer = require('nodemailer');
+import nodemailer from 'nodemailer';
 
 // Create email transporter
-const transporter = nodemailer.createTransporter({
+const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: process.env.EMAIL_USER || 'mervoltelektrik@gmail.com',
@@ -25,6 +25,11 @@ export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
+
+  console.log('Environment variables:', {
+    EMAIL_USER: process.env.EMAIL_USER,
+    EMAIL_PASS: process.env.EMAIL_PASS ? '***' : 'undefined'
+  });
 
   const { name, phone, message } = req.body;
 
